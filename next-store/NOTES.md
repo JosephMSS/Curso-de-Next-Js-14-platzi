@@ -6,6 +6,8 @@
   - [Tips](#tips)
 - [Sass](#sass)
   - [Configurations](#configurations)
+  - [Globals Sass](#globals-sass)
+    - [Tips](#tips-sass)
 - [Acknowledgements](#acknowledgements)
 
 <!-- Router -->
@@ -29,7 +31,7 @@
 
 <a id="tips"></a>
 
-### Tips:
+#### Tips:
 
 - Write the CSS classes in camelCase.
 - If we choose conventions other than camelCase, we can access the class through `styles['class-name']`.
@@ -60,7 +62,7 @@ export default nextConfig;
 
 **with**
 
-1. We use ``prependData: `@import "main.sass"``, for global access to any `.sass` document.
+1. We use `` prependData: `@import "main.sass" ``, for global access to any `.sass` document.
 
 ```javascript
 import { fileURLToPath } from "url";
@@ -81,6 +83,23 @@ const nextConfig = {
 
 export default nextConfig;
 ```
+
+<!-- Globals Sass -->
+
+<a id="globals-sass"> </a>
+
+### Global Sass
+We include the global.scss into the main layout located in `app/layout`.
+<!-- tips -->
+
+<a id="tips-sass"></a>
+
+#### Tips
+
+1. If a rule isn't written in a specific component, the global rule will affect the component. This applies to the general style, such as paragraphs or font weight.
+2. The global document should be as small as possible, including modifications for paragraphs or font weight.
+3. Usually, modifications include paragraph and font weight to maintain consistency across components.
+4. It should affect the components as little as possible.
 
 <!-- Acknowledgements -->
 
