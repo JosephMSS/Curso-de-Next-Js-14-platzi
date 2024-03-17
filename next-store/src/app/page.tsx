@@ -4,7 +4,7 @@ import { MainProducts } from "../components/Home/MainProducts";
 
 export default function Home() {
   return (
-    <main >
+    <main>
       <Hero />
       <Description />
       <MainProducts />

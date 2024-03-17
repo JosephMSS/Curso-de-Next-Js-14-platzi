@@ -1,5 +1,7 @@
 export const Footer = () => {
-return<>
-<footer>Future world</footer>
-</>
-}
+  return (
+    <>
+      <footer>Future world</footer>
+    </>
+  );
+};

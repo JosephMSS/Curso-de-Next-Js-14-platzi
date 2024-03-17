@@ -1,12 +1,12 @@
 export default function Layout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <main>
-            <nav>Layout store</nav>
-            {children}
-        </main>
-    );
+  return (
+    <main>
+      <nav>Layout store</nav>
+      {children}
+    </main>
+  );
 }
