@@ -8,6 +8,8 @@
   - [Configurations](#configurations)
   - [Globals Sass](#globals-sass)
     - [Tips](#tips-sass)
+- [Static Files](#static-files)
+
 - [Acknowledgements](#acknowledgements)
 
 <!-- Router -->
@@ -62,7 +64,7 @@ export default nextConfig;
 
 **with**
 
-1. We use `` prependData: `@import "main.sass" ``, for global access to any `.sass` document.
+1. We use ``prependData: `@import "main.sass"``, for global access to any `.sass` document.
 
 ```javascript
 import { fileURLToPath } from "url";
@@ -89,7 +91,9 @@ export default nextConfig;
 <a id="globals-sass"> </a>
 
 ### Global Sass
+
 We include the global.scss into the main layout located in `app/layout`.
+
 <!-- tips -->
 
 <a id="tips-sass"></a>
@@ -100,6 +104,21 @@ We include the global.scss into the main layout located in `app/layout`.
 2. The global document should be as small as possible, including modifications for paragraphs or font weight.
 3. Usually, modifications include paragraph and font weight to maintain consistency across components.
 4. It should affect the components as little as possible.
+
+<!-- Static Files -->
+
+<a id="static-files"> </a>
+
+### Static Files
+
+1. We include static files in the public directory.
+2. To access the file, we don't import the file; simply writing the path is enough.
+   **Example:**
+
+```
+<img src="/images/description.jpeg" alt="products marketplace" />
+
+```
 
 <!-- Acknowledgements -->
 
