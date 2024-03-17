@@ -10,6 +10,10 @@
     - [Tips](#tips-sass)
 - [Static Files](#static-files)
 
+  - [Optimization](#static-files-optimization)
+  - [Responsive](#static-files-responsive)
+  - [Blur Effect](#static-files-blur)
+
 - [Acknowledgements](#acknowledgements)
 
 <!-- Router -->
@@ -64,7 +68,7 @@ export default nextConfig;
 
 **with**
 
-1. We use ``prependData: `@import "main.sass"``, for global access to any `.sass` document.
+1. We use `` prependData: `@import "main.sass" ``, for global access to any `.sass` document.
 
 ```javascript
 import { fileURLToPath } from "url";
@@ -109,7 +113,7 @@ We include the global.scss into the main layout located in `app/layout`.
 
 <a id="static-files"> </a>
 
-### Static Files
+## Static Files
 
 1. We include static files in the public directory.
 2. To access the file, we don't import the file; simply writing the path is enough.
@@ -120,6 +124,46 @@ We include the global.scss into the main layout located in `app/layout`.
 
 ```
 
+<!-- Static Files -->
+
+<a id="static-files-optimization"> </a>
+
+### Optimization Image
+
+Once you reach 1000 images, Vercel will begin billing you. [More information on pricing can be found here](https://vercel.com/docs/image-optimization/limits-and-pricing).
+
+1. Utilize the Next.js `Image` component.
+2. Define `height` and `width` attributes.
+3. The `priority` attribute removes lazy loading from the image.
+
+<a id="static-files-responsive"> </a>
+
+### Responsive
+
+1. Remove `height` and `width` attributes.
+2. Use the `fill` attribute to fill the parent component.
+   - If we don't need the image to fill the entire component, we can handle this by wrapping the image inside a `<div>` and assigning a CSS class to contain the image.
+
+```jsx
+<div class="image-container">
+  <Image
+    src="/images/description.jpeg"
+    alt="products marketplace"
+    priority={false}
+    fill={true}
+  />
+</div>
+```
+<a id="static-files-blur"> </a>
+
+#### Blur effect
+
+Utilize the `blur` attribute to present a preloaded optimized image.
+**Requirements:**
+
+1. Utilize `placeholder='blur'`.
+2. Add the `blurDataURL` attribute.
+    - Create the blurDataURL base64 at [blurred.dev](https://blurred.dev/).
 <!-- Acknowledgements -->
 
 <a id="acknowledgements"></a>

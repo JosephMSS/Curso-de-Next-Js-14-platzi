@@ -1,14 +1,19 @@
 import Image from "next/image";
 import styles from "./Description.module.sass";
+import { PLACEHODER_IMAGE } from "./models";
 
 export const Description = () => {
   return (
     <section className={styles.Description}>
-      <Image src="/images/description.jpeg" alt="products marketplace"
-        width={500}
-        height={300}
-        priority={false}
-      />
+      <div className={styles.Description__imageContainer}>
+
+        <Image src="/images/description.jpeg" alt="products marketplace"
+          priority={false}
+          fill={true}
+          placeholder="blur"
+          blurDataURL={PLACEHODER_IMAGE}
+        />
+      </div>
       <div className={styles.Description__text}>
         <h2>Bring the future today</h2>
         <p>
